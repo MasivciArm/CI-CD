@@ -1,0 +1,35 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches: ["master"]
+  pul_request:
+    branches: ["master"]
+
+
+jobs:
+  build and test:
+  runs_on: ubuntu-latest
+
+
+step:
+  name: Checkout code
+  uses: actions/checkout@v3
+
+  name: Build docker image
+  uses: docker build ci-cd .
+
+  name: login to docker hub
+  uses: docker/login-action@v2
+    with:
+      username: ${{secrets.arturarm}}
+      password: ${{secrets.Masivci777}}
+
+ name: Push Docker Image
+ run: 
+
+  
+  
+
+  
+    
