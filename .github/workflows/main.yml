@@ -14,7 +14,7 @@ jobs:
 
 step:
   -name: Checkout code
-    uses: actions/checkout@v3
+  uses: actions/checkout@v3
   
  -name: Build docker image
     uses: docker build ci-cd .
