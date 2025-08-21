@@ -26,7 +26,7 @@ jobs:
         run: docker build -t ci-cd .
 
       - name: Tag image
-        run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}arturarm/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}arturarm/ci-cd:latest 
+        run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}artur.baghdasaryan94@gmail.com/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}artur.baghdasaryan94@gmail.com/ci-cd:latest 
 
      
   
