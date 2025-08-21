@@ -24,7 +24,6 @@ step:
   with:
       username: ${{ secrets.DOCKER_HUB_USERNAME }}
       password: ${{ secrets.DOCKER_HUB_TOKEN }}
-
  name: Push Docker Image
  run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
 
