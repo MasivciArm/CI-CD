@@ -22,8 +22,14 @@ jobs:
           username: ${{ secrets.DOCKER_HUB_USERNAME }}
           password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
-      - name: Push Docker image
-        run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
+      - name: Build Docker image
+        run: docker build -t ci-cd .
+
+     - name: Tag image
+       run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
+
+    - name: Push to Docker Hub
+      run: docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
 
   
   
