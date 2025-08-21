@@ -3,9 +3,8 @@ name: CI/CD Pipeline
 on:
   push:
     branches: ["master"]
-  pull_request:
+  pull_reguest:
     branches: ["master"]
- 
 
 jobs:
   build-and-test:
