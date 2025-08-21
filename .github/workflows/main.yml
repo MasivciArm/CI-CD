@@ -22,11 +22,11 @@ step:
   name: login to docker hub
   uses: docker/login-action@v2
     with:
-      username: ${{secrets.arturarm}}
-      password: ${{secrets.Masivci777}}
+      username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
  name: Push Docker Image
- run: 
+ run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
 
   
   
