@@ -13,19 +13,20 @@ jobs:
 
 
 step:
-  name: Checkout code
+ -name: Checkout code
   uses: actions/checkout@v3
-
-  name: Build docker image
+  
+ -name: Build docker image
   uses: docker build ci-cd .
 
-  name: login to docker hub
+ -name: login to docker hub
   uses: docker/login-action@v2
   with:
     username: ${{ secrets.DOCKER_HUB_USERNAME }}
     password: ${{ secrets.DOCKER_HUB_TOKEN }}
- name: Push Docker Image
- run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
+
+ -name: Push Docker Image
+  run: docker tag ci-cd ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest && docker push ${{ secrets.DOCKER_HUB_USERNAME }}/ci-cd:latest
 
   
   
